@@ -14,10 +14,10 @@ public class TempUseBoard {
 
 
         while(true){
-            int y = Integer.parseInt(sc.nextLine());
             int x = Integer.parseInt(sc.nextLine());
+            int y = Integer.parseInt(sc.nextLine());
 
-            myBoard.traverseBoard(y, x);
+            myBoard.traverseBoard(x, y);
             myBoard.printBoard();
 
         }

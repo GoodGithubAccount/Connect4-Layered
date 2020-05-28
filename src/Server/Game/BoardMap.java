@@ -1,8 +1,8 @@
 package Server.Game;
 
 public class BoardMap {
-    private int height;
     private int width;
+    private int height;
 
     private int layers;
     private int layerLevel;
@@ -12,24 +12,33 @@ public class BoardMap {
 
     private int[][] owner;
 
-    public BoardMap(int height, int width, int layers, int layerLevel, BoardMap parent){
+    // Keeps track of what position was last being played for.
+    private int playingForX;
+    private int playingForY;
+
+    public BoardMap(int width, int height, int layers, int layerLevel, BoardMap parent){
         this.layers = layers - 1;
         this.layerLevel = layerLevel + 1;
-        this.height = height;
         this.width = width;
+        this.height = height;
         this.parent = parent;
 
-        owner = new int[height][width];
-        boardMap = new BoardMap[height][width];
+        owner = new int[width][height];
+        boardMap = new BoardMap[width][height];
     }
 
     public void generateLayer(){
-        for(int i = 0; i < height; i++){
-            for(int a = 0; a < width; a++){
+        for(int i = 0; i < width; i++){
+            for(int a = 0; a < height; a++){
                 owner[i][a] = 0;
-                boardMap[i][a] = new BoardMap(height, width, layers, layerLevel, this);
+                boardMap[i][a] = new BoardMap(width, height, layers, layerLevel, this);
             }
         }
+    }
+
+    public void setPlayingFor(int x, int y){
+        playingForX = x;
+        playingForY = y;
     }
 
     public BoardMap getParent(){
