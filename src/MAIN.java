@@ -1,6 +1,8 @@
 import GUI.MainGUI;
 import com.sun.tools.javac.Main;
 
+import java.awt.*;
+
 public class MAIN {
 
     private int width;
@@ -8,6 +10,8 @@ public class MAIN {
     private int gridSize;
     private int gridCountWidth;
     private int gridCountHeight;
+
+    private Color[] colorArray;
 
 
     public static void main(String[] args) {
@@ -24,6 +28,9 @@ public class MAIN {
         this.width = width;
         this.height = height;
         gridSize = height / 5;
+
+        // Just temp color shit. 
+        colorArray = new Color[]{Color.BLACK, Color.GRAY, Color.YELLOW, Color.GREEN, Color.CYAN, Color.MAGENTA, Color.PINK, Color.ORANGE};
     }
 
     private void StartGUI(){
