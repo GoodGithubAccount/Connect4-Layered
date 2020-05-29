@@ -6,7 +6,7 @@ public class TempUseBoard {
 
 
     public static void main(String[] args) {
-        Board myBoard = new Board(8, 8, 3);
+        Board myBoard = new Board(7, 6, 3);
 
         myBoard.printBoard();
 
