@@ -1,9 +1,10 @@
+package Client;
+
 import GUI.MainGUI;
-import com.sun.tools.javac.Main;
 
 import java.awt.*;
 
-public class MAIN {
+public class ClientGUI {
 
     private int width;
     private int height;
@@ -13,18 +14,7 @@ public class MAIN {
 
     private Color[] colorArray;
 
-
-    public static void main(String[] args) {
-        int userWidth = 1600;
-        int userHeight = 900;
-
-        //gridSize = (width / 100) * 3;
-
-        MAIN myMain = new MAIN(userWidth, userHeight);
-        myMain.StartGUI();
-    }
-
-    public MAIN(int width, int height){
+    public ClientGUI(int width, int height){
         this.width = width;
         this.height = height;
         gridSize = height / 5;
@@ -33,7 +23,7 @@ public class MAIN {
         colorArray = new Color[]{Color.BLACK, Color.GRAY, Color.YELLOW, Color.GREEN, Color.CYAN, Color.MAGENTA, Color.PINK, Color.ORANGE};
     }
 
-    private void StartGUI(){
+    void StartGUI(){
         gridCountWidth = 7;
         gridCountHeight= 6;
 
