@@ -31,8 +31,8 @@ public class ClientGUI {
             gridSize -= 5;
         }
 
-        int calculationWidth = (gridCountWidth * gridSize);
-        int calculationHeight = (gridCountHeight * gridSize);
+        int calculationWidth = (gridCountWidth * gridSize + gridSize / 10 * gridCountWidth);
+        int calculationHeight = (gridCountHeight * gridSize + gridSize / 10 * gridCountHeight);
 
         int startingPointX = (width - calculationWidth) / 2;
         int startingPointY = (height - calculationHeight - (gridSize / 2)) / 2;

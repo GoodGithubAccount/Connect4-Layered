@@ -39,23 +39,41 @@ public class MainGUI extends JPanel {
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            Color myColor = Color.RED;
+            Color myColor = Color.GRAY;
             g.setColor(myColor);
 
             int newX = startingPointX;
             int newY = startingPointY;
-            for(int i = 0; i < gridCountHeight; i++){
-                for(int a = 0; a < gridCountWidth; a++){
-                    g.setColor(myColor);
-                    if(myColor == Color.RED) myColor = Color.BLUE;
-                    else myColor = Color.RED;
 
-                    g.fillRect(newX, newY, gridSize, gridSize);
-                    newX += gridSize;
+
+            for(int i = 0; i < gridCountHeight; i++){
+                g.setColor(Color.BLACK);
+                g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 10) * (gridCountWidth + 1)), gridSize / 10);
+
+                newY += gridSize / 10;
+
+                for(int a = 0; a < gridCountWidth * 2 + 1; a++){
+                    if(a % 2 == 0){
+                        g.setColor(Color.BLACK);
+                        g.fillRect(newX, newY, gridSize / 10, gridSize);
+
+                        newX += gridSize / 10;
+                    }
+                    else{
+                        g.setColor(myColor);
+                        if(myColor == Color.GRAY) myColor = Color.LIGHT_GRAY;
+                        else myColor = Color.GRAY;
+
+                        g.fillRect(newX, newY, gridSize, gridSize);
+                        newX += gridSize;
+                    }
                 }
                 newX = startingPointX;
                 newY += gridSize;
             }
+            g.setColor(Color.BLACK);
+            g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 10) * (gridCountWidth + 1)), gridSize / 10);
+
         }
     };
 }
