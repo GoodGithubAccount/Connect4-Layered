@@ -15,8 +15,10 @@ public class MainGUI extends JPanel {
     private int startingPointX;
     private int startingPointY;
 
+    private int borderSize;
 
-    public MainGUI(int width, int height, int gridSize, int gridCountWidth, int gridCountHeight, int startingPointX, int startingPointY){
+
+    public MainGUI(int width, int height, int gridSize, int gridCountWidth, int gridCountHeight, int startingPointX, int startingPointY, int borderSize){
         this.width = width;
         this.height = height;
         this.gridSize = gridSize;
@@ -24,6 +26,7 @@ public class MainGUI extends JPanel {
         this.gridCountHeight = gridCountHeight;
         this.startingPointX = startingPointX;
         this.startingPointY = startingPointY;
+        this.borderSize = borderSize;
 
         JFrame frame = new JFrame("Test");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,16 +51,16 @@ public class MainGUI extends JPanel {
 
             for(int i = 0; i < gridCountHeight; i++){
                 g.setColor(Color.BLACK);
-                g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 20) * (gridCountWidth + 1)), gridSize / 20);
+                g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / borderSize) * (gridCountWidth + 1)), gridSize / borderSize);
 
-                newY += gridSize / 20;
+                newY += gridSize / borderSize;
 
                 for(int a = 0; a < gridCountWidth * 2 + 1; a++){
                     if(a % 2 == 0){
                         g.setColor(Color.BLACK);
-                        g.fillRect(newX, newY, gridSize / 20, gridSize);
+                        g.fillRect(newX, newY, gridSize / borderSize, gridSize);
 
-                        newX += gridSize / 20;
+                        newX += gridSize / borderSize;
                     }
                     else{
                         g.setColor(myColor);
@@ -72,7 +75,7 @@ public class MainGUI extends JPanel {
                 newY += gridSize;
             }
             g.setColor(Color.BLACK);
-            g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 20) * (gridCountWidth + 1)), gridSize / 20);
+            g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / borderSize) * (gridCountWidth + 1)), gridSize / borderSize);
 
         }
     };

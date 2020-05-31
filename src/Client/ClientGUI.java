@@ -31,12 +31,14 @@ public class ClientGUI {
             gridSize -= 5;
         }
 
-        int calculationWidth = (gridCountWidth * gridSize + gridSize / 20 * gridCountWidth);
-        int calculationHeight = (gridCountHeight * gridSize + gridSize / 20 * gridCountHeight);
+        int borderSize = 20;
+
+        int calculationWidth = (gridCountWidth * gridSize + gridSize / borderSize * gridCountWidth);
+        int calculationHeight = (gridCountHeight * gridSize + gridSize / borderSize * gridCountHeight);
 
         int startingPointX = (width - calculationWidth) / 2;
         int startingPointY = (height - calculationHeight - (gridSize / 2)) / 2;
 
-        MainGUI myGUI = new MainGUI(width, height, gridSize, gridCountWidth, gridCountHeight, startingPointX, startingPointY);
+        MainGUI myGUI = new MainGUI(width, height, gridSize, gridCountWidth, gridCountHeight, startingPointX, startingPointY, borderSize);
     }
 }
