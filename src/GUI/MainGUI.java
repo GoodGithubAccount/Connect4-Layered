@@ -48,16 +48,16 @@ public class MainGUI extends JPanel {
 
             for(int i = 0; i < gridCountHeight; i++){
                 g.setColor(Color.BLACK);
-                g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 10) * (gridCountWidth + 1)), gridSize / 10);
+                g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 20) * (gridCountWidth + 1)), gridSize / 20);
 
-                newY += gridSize / 10;
+                newY += gridSize / 20;
 
                 for(int a = 0; a < gridCountWidth * 2 + 1; a++){
                     if(a % 2 == 0){
                         g.setColor(Color.BLACK);
-                        g.fillRect(newX, newY, gridSize / 10, gridSize);
+                        g.fillRect(newX, newY, gridSize / 20, gridSize);
 
-                        newX += gridSize / 10;
+                        newX += gridSize / 20;
                     }
                     else{
                         g.setColor(myColor);
@@ -72,7 +72,7 @@ public class MainGUI extends JPanel {
                 newY += gridSize;
             }
             g.setColor(Color.BLACK);
-            g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 10) * (gridCountWidth + 1)), gridSize / 10);
+            g.fillRect(newX, newY, (gridSize * gridCountWidth) + ((gridSize / 20) * (gridCountWidth + 1)), gridSize / 20);
 
         }
     };
