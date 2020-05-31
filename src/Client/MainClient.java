@@ -24,7 +24,7 @@ public class MainClient {
         MainClient client = new MainClient(myAddress, myPort);
         client.startGUI();
 
-        // Need some timeout/reconnect, whatever handling here. 
+        // Need some timeout/reconnect, whatever handling here.
         try {
             client.startClient();
         } catch (InterruptedException | IOException e) {
